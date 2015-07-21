@@ -37,3 +37,19 @@ describe('the integer function', function () {
   });
 
 });
+
+describe('the class string regex', function () {
+  var testString = 'me you dupree';
+
+  it('returns true for middle strings', function () {
+    expect(advanced.hasClassName(testString, 'you')).to.be.true;
+  });
+
+  it('returns true for end strings', function () {
+    expect(advanced.hasClassName(testString, 'dupree')).to.be.true;
+  });
+
+  it('returns false for no strings', function () {
+    expect(advanced.hasClassName(testString, 'homie')).to.be.false;
+  });
+});

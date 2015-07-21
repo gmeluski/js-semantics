@@ -29,10 +29,17 @@ var isInteger = function (toTest) {
 
 /**
 * decide whether the string is found inside the other string
+*
+* @param {String} haystack
+* @param {String} needle
+* @return {Boolean}
 */
-var classRegEx = function () {
+var hasClassName = function (haystack, needle) {
+  var classPattern = new RegExp('(^|\\s)' + needle + '(\\s|$)');
 
+  return classPattern.test(haystack);
 };
 
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
+module.exports.hasClassName = hasClassName;
