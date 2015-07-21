@@ -21,3 +21,19 @@ describe('the sum function', function () {
   });
 
 });
+
+describe('the integer function', function () {
+  it('returns false for some random type', function () {
+    expect(advanced.isInteger('string')).to.be.false;
+  });
+
+  it('returns true for an integer', function () {
+    expect(advanced.isInteger(3)).to.be.true;
+  });
+
+  it('returns false for a decimal', function () {
+    expect(advanced.isInteger(0.3)).to.be.false;
+
+  });
+
+});

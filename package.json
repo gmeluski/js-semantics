@@ -1,0 +1,38 @@
+{
+  "name": "js-semantics",
+  "version": "0.0.1",
+  "description": "some techy stuff from interviews",
+  "main": "advanced.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.0.0",
+    "jsdom": "^5.6.1",
+    "mocha": "^2.2.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmeluski/js-semantics.git"
+  },
+  "keywords": [
+    "nonsense",
+    "tech",
+    "mocha",
+    "chai",
+    "js",
+    "curry"
+  ],
+  "author": "Gregg Meluski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmeluski/js-semantics/issues"
+  },
+  "homepage": "https://github.com/gmeluski/js-semantics"
+}
