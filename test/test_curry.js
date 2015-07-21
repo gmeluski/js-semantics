@@ -36,4 +36,13 @@ describe('curried functions', function () {
 
     expect(sumFour(1)(2)(3)(4)).to.equal(10);
   });
+
+  it('also curries automatigically', function () {
+    var sum = function (x, y) {
+      return x + y;
+    };
+    var mySum = curry.autoCurry(sum);
+
+    expect(mySum(3)(4)).to.equal(7);
+  });
 });
