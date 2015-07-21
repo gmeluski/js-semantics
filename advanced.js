@@ -40,6 +40,10 @@ var hasClassName = function (haystack, needle) {
   return classPattern.test(haystack);
 };
 
+/**
+* writing from scratch, what could go wrong?
+*
+*/
 var getElementsByClassName = function (name) {
   var allElements = document.getElementsByTagName('*');
   var classPattern = new RegExp('(^|\\s)' + name + '(\\s|$)');
@@ -57,7 +61,26 @@ var getElementsByClassName = function (name) {
 
 };
 
+var isPalindrome = function (stringToTest) {
+  //remove all spaces
+  var compressedString = stringToTest.replace(/\s+/g, '');
+  var leftMarker = 0;
+  var rightMarker = compressedString.length - 1;
+
+  while (leftMarker <= rightMarker) {
+    if (compressedString[leftMarker] !== compressedString[rightMarker]) {
+      return false;
+    }
+
+    leftMarker++;
+    rightMarker--;
+  }
+
+  return true;
+};
+
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
 module.exports.hasClassName = hasClassName;
 module.exports.getElementsByClassName = getElementsByClassName;
+module.exports.isPalindrome = isPalindrome;

@@ -72,3 +72,14 @@ describe('the class name selector', function () {
   });
 
 });
+
+describe('the palindrome function', function () {
+  it('returns true when it IS a palindrome', function () {
+    expect(advanced.isPalindrome('a but tuba')).to.be.true;
+  });
+
+  it('returns false when not', function () {
+    expect(advanced.isPalindrome('gregg is')).to.be.false;
+  });
+
+});
