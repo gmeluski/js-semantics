@@ -40,6 +40,24 @@ var hasClassName = function (haystack, needle) {
   return classPattern.test(haystack);
 };
 
+var getElementsByClassName = function (name) {
+  var allElements = document.getElementsByTagName('*');
+  var classPattern = new RegExp('(^|\\s)' + name + '(\\s|$)');
+  var capturedArray = [];
+  var currentElement;
+
+  for (var i = 0; i < allElements.length; i++) {
+    currentElement = allElements[i];
+    if (classPattern.test(currentElement.className)) {
+      capturedArray.push(currentElement);
+    }
+  }
+
+  return capturedArray;
+
+};
+
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
 module.exports.hasClassName = hasClassName;
+module.exports.getElementsByClassName = getElementsByClassName;
