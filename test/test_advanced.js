@@ -93,6 +93,20 @@ describe('a simple closure', function () {
 
 });
 
+describe('checking the depth of some shit', function () {
+  var frontChar = '[';
+  var backChar = ']';
+
+  it('tells us if some shit is balanced', function () {
+    expect(advanced.isBalanced('[[gregg]]', frontChar, backChar)).to.be.true;
+
+  });
+
+  it('tells us if some shit isnt balanced', function () {
+    expect(advanced.isBalanced('[[gregg]', frontChar, backChar)).to.be.false;
+  });
+});
+
 describe('modifying the prototype', function () {
   var passedString = 'missing';
 

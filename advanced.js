@@ -98,6 +98,31 @@ var modifyPrototype = function () {
 
 };
 
+var isBalanced = function (stringToCheck, frontChar, backChar) {
+  var asArray = stringToCheck.split('');
+  var i = 0;
+  var currentChar = asArray[i];
+  var backwardsArray = Array.prototype.slice.call(asArray);
+  var j = 0;
+  var backwardsChar;
+
+  backwardsArray.reverse();
+  backwardsChar = backwardsArray[j];
+
+  while (i < asArray.length && currentChar === frontChar) {
+    i++;
+    currentChar = asArray[i];
+  }
+
+  while (j < backwardsArray.length && backwardsChar === backChar) {
+    j++;
+    backwardsChar = backwardsArray[j];
+  }
+
+  return i === j;
+
+};
+
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
 module.exports.hasClassName = hasClassName;
@@ -105,3 +130,4 @@ module.exports.getElementsByClassName = getElementsByClassName;
 module.exports.isPalindrome = isPalindrome;
 module.exports.makeMeluski = makeMeluski;
 module.exports.modifyPrototype = modifyPrototype;
+module.exports.isBalanced = isBalanced;
