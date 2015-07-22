@@ -79,8 +79,29 @@ var isPalindrome = function (stringToTest) {
   return true;
 };
 
+
+/**
+* well this is more currying. but it has a closure
+*/
+var makeMeluski = function (name) {
+  var lastName = 'Meluski';
+
+  return function () {
+    return name + ' ' + lastName;
+  };
+};
+
+var modifyPrototype = function () {
+  String.prototype.yReplace = function () {
+    return this.replace(/i/g, 'y');
+  };
+
+};
+
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
 module.exports.hasClassName = hasClassName;
 module.exports.getElementsByClassName = getElementsByClassName;
 module.exports.isPalindrome = isPalindrome;
+module.exports.makeMeluski = makeMeluski;
+module.exports.modifyPrototype = modifyPrototype;

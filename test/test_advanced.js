@@ -83,3 +83,27 @@ describe('the palindrome function', function () {
   });
 
 });
+
+describe('a simple closure', function () {
+  var fullName = advanced.makeMeluski('Gregg');
+
+  it('returns a full name when just given the first', function () {
+    expect(fullName()).to.equal('Gregg Meluski');
+  });
+
+});
+
+describe('modifying the prototype', function () {
+  var passedString = 'missing';
+
+  advanced.modifyPrototype();
+
+  it('properly modifies a method on the prototype', function () {
+    expect(passedString.yReplace()).to.equal('myssyng');
+  });
+
+  it('can chain a modified method on the prototype', function () {
+    advanced.modifyPrototype();
+    expect(passedString.yReplace().charAt(6)).to.equal('g');
+  });
+});
