@@ -63,5 +63,41 @@ ArrayStorage.prototype.bubbleSort = function () {
   return this;
 };
 
+/**
+* use a growing range to make comparisons to the left
+*/
+ArrayStorage.prototype.insertionSort = function () {
+  var localStorage = this.getStorage();
+  var tempStore;
+  var secondIndex;
+  var neighbor;
+
+  // start at current index = 1
+  for (var i = 1; i < localStorage.length; i ++) {
+    // copy the current index's value to a temp variable
+    tempStore = localStorage[i];
+
+    // copy the current index to a second index
+    secondIndex = i;
+
+    // going to move backwards with the second index
+    // compare the neighbor to the value we stored from the right bound
+
+    while (secondIndex > 0 && localStorage[secondIndex - 1] >= tempStore) {
+      // if current index -1 is greater than current index, copy current index -1 to current index
+      localStorage[secondIndex] = localStorage[secondIndex - 1];
+      // now decrement the second index
+      secondIndex--;
+    }
+
+    // copy temp to current index
+    localStorage[secondIndex] = tempStore;
+
+  }
+
+  this.setStorage(localStorage);
+  return this;
+};
+
 
 module.exports = ArrayStorage;

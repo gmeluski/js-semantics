@@ -15,4 +15,9 @@ describe('the storage object', function () {
     expect(bubbleStore.fillStore().bubbleSort().getStorage()).to.eql([0, 10, 11, 22, 33, 44, 55, 66, 77, 88, 99]);
   });
 
+  it('implements insertion sort properly', function () {
+    var insertionStore = new Storage();
+
+    expect(insertionStore.fillStore().insertionSort().getStorage()).to.eql([0, 10, 11, 22, 33, 44, 55, 66, 77, 88, 99]);
+  });
 });
