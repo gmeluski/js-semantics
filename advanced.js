@@ -123,6 +123,19 @@ var isBalanced = function (stringToCheck, frontChar, backChar) {
 
 };
 
+var setPolybind = function () {
+  Function.prototype.polybind = function () {
+    var functionToBind = this;
+    var localArguments = Array.prototype.slice.call(arguments);
+    var desiredContext = localArguments.shift();
+
+    return function () {
+      return functionToBind.apply(desiredContext, Array.prototype.slice.call(arguments));
+    };
+  };
+
+};
+
 module.exports.sum = sum;
 module.exports.isInteger = isInteger;
 module.exports.hasClassName = hasClassName;
@@ -131,3 +144,4 @@ module.exports.isPalindrome = isPalindrome;
 module.exports.makeMeluski = makeMeluski;
 module.exports.modifyPrototype = modifyPrototype;
 module.exports.isBalanced = isBalanced;
+module.exports.setPolybind = setPolybind;

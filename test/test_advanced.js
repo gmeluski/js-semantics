@@ -121,3 +121,24 @@ describe('modifying the prototype', function () {
     expect(passedString.yReplace().charAt(6)).to.equal('g');
   });
 });
+
+describe('creates a custom bind function', function () {
+  it('properly binds that', function () {
+    advanced.setPolybind();
+    var module = {
+      x: 81,
+      getX: function (someNumber) {
+        return someNumber + this.x;
+      }
+    };
+    var argumentIsh = 10;
+    var boundGetX;
+    var getX;
+
+    getX = module.getX;
+    boundGetX = getX.polybind(module);
+    console.log(boundGetX);
+    expect(boundGetX(argumentIsh)).to.equal(module.x + argumentIsh);
+  });
+
+});
