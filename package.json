@@ -6,14 +6,8 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {
-    "chai": "^3.0.0",
-    "jsdom": "^3.1.2",
-    "mocha": "^2.2.5"
-  },
-  "devDependencies": {
-    "mocha": "^2.2.5"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "mocha"
   },
