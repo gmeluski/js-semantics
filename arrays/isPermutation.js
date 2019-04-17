@@ -10,8 +10,8 @@ const getNewSearch = (searchArray, foundIndex) => {
 }
 
 const findInString = (characterToMatch, stringToSearch) => {
-  for (let j = 0; j < stringToSearch.length; j++) {
-    const currentTestCharacter = stringToSearch.charAt(j);
+  for (let i = 0; i < stringToSearch.length; i++) {
+    const currentTestCharacter = stringToSearch.charAt(i);
     if (characterToMatch === currentTestCharacter) {
       return true;
     }
