@@ -25,11 +25,15 @@ const isPermutation = (first, second) => {
     return false;
   }
 
+  let searcher = second.split("")
+
   for (let i = 0; i < first.length; i++) {
     const characterToMatch = first.charAt(i);
-    const matchIndex = findMatchIndex(characterToMatch, second.split(""));
+    const matchIndex = findMatchIndex(characterToMatch, searcher.slice());
     if (!Number.isInteger(matchIndex)) {
       return false;
+    } else {
+      searcher = getNewSearch(searcher, matchIndex)
     }
   }
 
