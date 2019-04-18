@@ -9,11 +9,11 @@ const getNewSearch = (searchArray, foundIndex) => {
   return toChange;
 }
 
-const findInString = (characterToMatch, stringToSearch) => {
+const findMatchIndex = (characterToMatch, stringToSearch) => {
   for (let i = 0; i < stringToSearch.length; i++) {
     const currentTestCharacter = stringToSearch.charAt(i);
     if (characterToMatch === currentTestCharacter) {
-      return true;
+      return i;
     }
   }
 
@@ -27,8 +27,8 @@ const isPermutation = (first, second) => {
 
   for (let i = 0; i < first.length; i++) {
     const characterToMatch = first.charAt(i);
-    const match = findInString(characterToMatch, second);
-    if (!match) {
+    const matchIndex = findMatchIndex(characterToMatch, second);
+    if (!Number.isInteger(matchIndex)) {
       return false;
     }
   }

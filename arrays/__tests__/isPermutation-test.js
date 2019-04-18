@@ -25,7 +25,7 @@ describe('is unique', () => {
 
   })
 
-  xit('fails when there are asymmetrically matched letters', () => {
+  it('fails when there are asymmetrically matched letters', () => {
     const firstString = 'eatt';
     const secondString = 'teea';
 
