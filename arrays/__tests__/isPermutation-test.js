@@ -33,7 +33,7 @@ describe('is unique', () => {
 
   })
 
-  xit('works when there are repeat letters', () => {
+  it('works when there are repeat letters', () => {
     const firstString = 'eatt';
     const secondString = 'ttea';
 
