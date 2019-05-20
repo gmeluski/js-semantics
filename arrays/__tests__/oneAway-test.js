@@ -17,11 +17,11 @@ describe('if one string is a single edit away from the first string', () => {
 
   })
 
-  xit('fails is the original is one character longer and requires a swap', () => {
+  it('fails is the original is one character longer and requires a swap', () => {
     const original = 'pale';
     const match = 'plf';
 
-    expect(oneAway(original, match)).toEqual(true);
+    expect(oneAway(original, match)).toEqual(false);
   })
 
   it('matches an insertion', () => {
