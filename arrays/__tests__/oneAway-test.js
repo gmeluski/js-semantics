@@ -1,7 +1,7 @@
 import oneAway from '../oneAway';
 
 describe('if one string is a single edit away from the first string', () => {
-  xit('matches for zero edits', () => {
+  it('matches for zero edits', () => {
     const original = 'pale';
     const match = 'pale';
 
@@ -41,15 +41,20 @@ describe('if one string is a single edit away from the first string', () => {
 
   })
 
-  xit('matches a deletion', () => {
+  it('matches a deletion', () => {
+    const original = 'ple';
+    const match = 'pale';
 
-
+    expect(oneAway(original, match)).toEqual(true);
   })
 
-  xit('matches an insertion', () => {
+  it('fails if the match requires a deletion and a swap', () => {
+    const original = 'plf';
+    const match = 'pale';
 
-
+    expect(oneAway(original, match)).toEqual(false);
   })
+
 
   xit('matches a swap', () => {
 
