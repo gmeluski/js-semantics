@@ -7,8 +7,6 @@ const getSorted = (string) => {
 const handleShorterOriginal = (sortedOriginal, sortedMatch) => {
   let originalIndex = 0;
   let matchIndex = 0;
-  console.log(sortedOriginal);
-  console.log(sortedMatch);
 
   while (matchIndex < sortedMatch.length) {
     const originalCharacter = sortedOriginal[originalIndex];
@@ -22,8 +20,6 @@ const handleShorterOriginal = (sortedOriginal, sortedMatch) => {
       matchIndex++;
     }
   }
-
-  console.log('done', originalIndex);
 
   return originalIndex === sortedOriginal.length;
 }
@@ -56,6 +52,21 @@ const handleLongerOriginal = (sortedOriginal, sortedMatch) => {
   return !mismatchFlag;
 }
 
+const handleSameLength = (original, match) => {
+  const TOO_MANY_SWAPS = 2;
+  let index = 0;
+  let swapCount = 0;
+
+  while (index < original.length && swapCount < TOO_MANY_SWAPS) {
+    if (original[index] !== match[index]) {
+      swapCount++;
+    }
+    index++;
+  }
+
+  return swapCount < TOO_MANY_SWAPS;
+}
+
 const oneAway = (original, match) => {
   const originalCount = original.length;
   const matchCount = match.length;
@@ -74,18 +85,14 @@ const oneAway = (original, match) => {
   const sortedMatch = getSorted(match);
 
   if (countDifference === 1) {
-    // make sure every character in the shorter string is found in the original
     return handleLongerOriginal(sortedOriginal, sortedMatch);
   }
 
   if (countDifference === -1) {
-    // ensure that there is a match, off by one
     return handleShorterOriginal(sortedOriginal, sortedMatch);
   }
 
-  if (countDifference === 0) {
-    // either exact match or a one swap is ok
-  }
+  return handleSameLength(original, match);
 }
 
 export default oneAway;

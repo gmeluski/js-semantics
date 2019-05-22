@@ -56,14 +56,18 @@ describe('if one string is a single edit away from the first string', () => {
   })
 
 
-  xit('matches a swap', () => {
+  it('matches a swap', () => {
+    const original = 'pale';
+    const match = 'palf';
 
-
+    expect(oneAway(original, match)).toEqual(true);
   })
 
-  xit('fails if more than two operations are required', () => {
+  it('fails if more than two operations are required', () => {
+    const original = 'pale';
+    const match = 'pamf';
 
-
+    expect(oneAway(original, match)).toEqual(false);
   })
 
 })
