@@ -10,13 +10,6 @@ const generateRow = (matrix, xPosition) => {
 }
 
 const rotateMatrix = (startMatrix) => {
-  // get every single element in the first column
-  // for (0 > n (because n is the same in both)
-  // get x, 0. that's the first array
-  // the first array to replaced is an iteration through
-  // 0,x
-  //
-
   let finalMatrix = []
 
   for (let i = 0; i < startMatrix.length; i++) {
