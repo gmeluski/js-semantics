@@ -8,18 +8,29 @@ const findPosition = (characterToFind, stringToSearch) => {
   return i;
 }
 
+const getSecondStringPosition = (stringLength, index, distance) => (
+  (stringLength - index > distance) ? index + distance : index - (stringLength - distance)
+)
+
 const isSubstring = (stringOne, stringTwo) => {
   if (stringOne.length !== stringTwo.length) {
     return false;
   }
 
-  const indexToCheck = 0;
-  const characterToCheck = stringOne[indexToCheck];
 
-  const toStart = findPosition(characterToCheck, stringTwo)
+  const distance = findPosition(stringOne[0], stringTwo)
 
-  // find the first instance of this letter
-  return false;
+  let matches = true;
+  let i = 0;
+  while (matches && i < stringOne.length) {
+    const secondStringIndex = getSecondStringPosition(stringTwo.length, i, distance)
+    if (stringOne[i] !== stringTwo[secondStringIndex]) {
+      matches = false;
+    }
+    i++;
+  }
+
+  return matches;
 }
 
 
