@@ -19,6 +19,9 @@ const isSubstring = (stringOne, stringTwo) => {
 
 
   const distance = findPosition(stringOne[0], stringTwo)
+  if (distance === stringOne.length) {
+    return false;
+  }
 
   let matches = true;
   let i = 0;

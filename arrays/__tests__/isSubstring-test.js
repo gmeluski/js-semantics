@@ -9,14 +9,14 @@ describe('string rotations', () => {
 
   })
 
-  xit('breaks when it doesnt find first character', () => {
+  it('breaks when it doesnt find first character', () => {
     const stringOne = 'waterbottle';
     const stringTwo = 'erbottleaat';
 
-    expect(isSubstring(stringOne, stringTwo)).toEqual(true);
+    expect(isSubstring(stringOne, stringTwo)).toEqual(false);
   })
 
-  xit('doesnt accept non rotations', () => {
+  it('doesnt accept non rotations', () => {
     const stringOne = 'waterbottle';
     const stringTwo = 'abeelortttw'
 
